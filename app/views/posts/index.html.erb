@@ -15,7 +15,12 @@
       
     <h2 class="message-title"><%=  post.title  %> </h2><BR>
 
-    <%= link_to "View Post", post, class: "btn-custom" %><br>
+    <%= link_to "View Post", post, class: "btn-custom" %>
+    <%=link_to like_post_path(post), method: :put, class: "btn btn-primary" do %>
+  <span class="glyphicon glyphicon-heart"  style="color:white" ></span>
+   <h8  style="color:white" >Like </h8>
+ <h8  style="color:white" > <%= post.get_upvotes.size %> </h8>
+     <% end %>
      <br><p style="color:white;"> Posted <%= time_ago_in_words(post.created_at) %> by <%= post.user.firstname%>  </p>
     </div>
 	</div>
@@ -24,6 +29,14 @@
  
 
 <br>
+<% unless @posts.empty? %>
 
+<nav class"navbar-fixed-bottom">
+  <ul class="pager">
+    <li class="previous " <%= will_paginate @posts %> <span aria-hidden="true">&larr;
+   
+  </ul>
+</nav>
+<% end %>
 
 

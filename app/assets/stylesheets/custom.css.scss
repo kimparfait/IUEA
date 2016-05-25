@@ -60,13 +60,17 @@
 }
 
 .thumbnail {
-
+ @include body;
  padding:1px;
 border:1px solid #021a40;
- width:240px;
- height: 340px;
+ width:200px;
+ height: 240px;
+ 
   
 }
+
+
+
 .book-info {
   @include body;
 
@@ -237,6 +241,8 @@ border:1px solid #021a40;
   color: #fff;
   font-family: 'Muli', sans-serif;
   font-weight: 300;
+  height: 1000px;
+
 
   h2 {
     margin-top: 0;
@@ -287,3 +293,28 @@ border:1px solid #021a40;
 }
 
 
+.round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
+.round-image-60 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 80 px;
+    -moz-border-radius: 80px;
+    -webkit-border-radius: 80px;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}

@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :upvote]
   before_filter :check_user, only: [:edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :upvote]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.paginate(:page => params[:page], :per_page => 4).order("created_at DESC")
   end
 
   # GET /posts/1
@@ -63,6 +63,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote 
+    @post.upvote_by current_user
+    redirect_to :back
+
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -71,7 +77,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :document)
     end
 
     def check_user

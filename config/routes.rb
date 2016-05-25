@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   
 
   devise_for :users
-  resources :posts
+  resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+    end
+   end 
+
   resources  :users
   get 'pages/about'
   get 'users/show'

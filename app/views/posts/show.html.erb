@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-8 col-md-offset-2">
+	<div class="message-show">
+<h2>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</h2>
+
+<p class="message-desc">
+  <strong>Description:</strong>
+  <%= @post.description %>
+  <p lass="current-category" style="color:white;">Posted <%=time_ago_in_words (@post.created_at)  %> by  <%= @post.user.firstname%> </p>
+</p>
+<div class="links btn-group">
+<%= link_to 'Edit', edit_post_path(@post) , class: "btn btn-default" %> 
+<%= link_to 'Destroy',@post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+<%= link_to 'Back', posts_path , class: "btn btn-default" %>
+</div>
+</div>
+</div>

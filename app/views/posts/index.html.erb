@@ -1,0 +1,29 @@
+
+
+<p id="notice"><%= notice %></p>
+<div class="center">
+
+
+</div>
+
+
+ 
+    <% @posts.each do |post| %>
+    <div class="col-md-4">
+	<div class="post">
+	
+      
+    <h2 class="message-title"><%=  post.title  %> </h2><BR>
+
+    <%= link_to "View Post", post, class: "btn-custom" %><br>
+     <br><p style="color:white;"> Posted <%= time_ago_in_words(post.created_at) %> by <%= post.user.firstname%>  </p>
+    </div>
+	</div>
+   
+    <% end %>
+ 
+
+<br>
+
+
+

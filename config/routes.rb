@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     end
    end 
 
+
   resources  :users
+   resources :conversations do
+    resources :messages 
+  end 
   get 'pages/about'
   get 'users/show'
 

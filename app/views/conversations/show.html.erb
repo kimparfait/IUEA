@@ -1,0 +1,26 @@
+<div class="col-md-6 col-md-offset-3">
+
+  <div class="signup-form">
+
+
+<h5> <strong>Subject: <%= @conversation.subject %> </strong></h5>
+<% @conversation.receipts_for(current_user).each do |receipt| %>
+	<div>
+	    <div class="current-category" style="color:blue" > 
+	    <h6><%= receipt.message.sender.name %> wrote: </h6>
+	    </div>
+		<p><%= receipt.message.body %><p>
+	</div>
+	<% end %>
+
+	<%= form_tag conversation_messages_path(@conversation), method: :post do %>
+	<div class="form-group">
+		<%= text_area_tag  :body, nil , class: "form-control" %>
+
+	</div>
+
+	<%= submit_tag "SENT", class: "btn btn-primary" %>
+	<%  end %>
+
+	</div>
+	</div>

@@ -23,7 +23,7 @@
           <li><%= link_to 'Profile', current_user %></li>
            <li class="round-image-50" ><%= image_tag(current_user.image.url(:thumb)) %></li>
         
-
+             <li><%= link_to "Messages", conversations_path %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path(current_user), method: :delete %></li>
           <% else %>
          <li><%= link_to "Hi!Sign Up", new_user_registration_path %></li>

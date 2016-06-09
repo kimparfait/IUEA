@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
 
 		receipt=current_user.reply_to_conversation(@conversation, params[:body])
 		flash[:success] = "Message has been sent!"
-	    redirect_to root_url
+		redirect_to conversation_path(receipt.conversation) 
 	end 
 	private 
 	def set_conversation

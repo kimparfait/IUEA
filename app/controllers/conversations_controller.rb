@@ -17,7 +17,7 @@ class ConversationsController < ApplicationController
 	def create
 	recipient = User.find(params[:user_id])
 	receipt = current_user.send_message(recipient,params[:body],params[:subject])
-	redirect_to root_url
+	redirect_to conversation_path(receipt.conversation) 
 
 	end 
 

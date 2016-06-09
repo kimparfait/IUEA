@@ -1,0 +1,7 @@
+<%= form_for([@post, @comment]) do |f| %>
+	<div class="form-group">
+   
+    <%= f.text_area :content, placeholder: "Comment", class: "form-control" %>
+  </div>
+	<%= f.button :submit, :class => 'btn-custom' %>
+<% end %>

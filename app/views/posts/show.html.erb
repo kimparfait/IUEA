@@ -26,7 +26,17 @@
 <% if current_user == @post.user %>
 <%= link_to 'Edit', edit_post_path(@post) , class: "btn btn-default" %> 
 <%= link_to 'Destroy',@post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
-<%end%>
+<%end%> <br>
+
+
+
+ <h3 class="comment-section-header">(<%= @post.comments.count %>)Comments</h3>
+		<!-- renders the _comment.html.erb partial file. -->
+		<p><%= render @post.comments.limit(7).order("created_at DESC") %></p>
+
+<h3 class="reply-to-msg">comment:</h3>
+		<!-- renders the comments form -->
+<%= render 'comments/form' %>
 <%= link_to 'Back', posts_path , class: "btn btn-default" %>
 </div>
 </div>

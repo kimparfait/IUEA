@@ -7,8 +7,8 @@
 	<div class="links btn-group">
 	<% if user_signed_in? %>
 		<% if comment.user_id == current_user.id %>
-			<%= link_to "Edit", edit_post_comment_path(comment.post, comment) , class: "btn btn-default" %>
-			<%= link_to "Delete", post_comment_path(comment.post, comment), method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-default" %>
+			<%= link_to "Edit", edit_post_comment_path(comment.post, comment) , class: "btn btn-link" %>
+			<%= link_to "Delete", post_comment_path(comment.post, comment), method: :delete, data: { confirm: "Are you sure?" } , class: "btn btn-link" %>
 		<% end %>
 		<% end %>
 	</div>

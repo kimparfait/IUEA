@@ -6,7 +6,7 @@
 @mixin body {
   background-color: #f5f5f1;
   color: #333333;
-  font-family: Arial, Helvetica, Sans-Serif;
+font-family: "Comic Sans MS", Times, serif;
   border-radius: 5px;
   box-shadow: 3px 3px 5px 6px #ccc;
   padding: 1.5em 1.25em;
@@ -15,21 +15,21 @@
 }
   
 .navbar-default {
-  background-color: #efefeb;
+  background-color: black;
 }
 
 .navbar-default .navbar-brand {
-  font-family: guardain-egyptt, georgia, serif;
+ font-family: "Impact", Times, serif;
   font-weight: 400;
-  color: #d5641c;
+  color: #FFF5EE;
   font-size: 30px;
 }
 
 .navbar-default .navbar-nav > li > a {
-  font-famliy: Arial, Helvetica, sans-serif;
+ font-family: "Comic Sans MS", Times, serif;
   font-size: 14px;
   font-weight: bold;
-  color: #019285;
+  color: #ff0000;
 }
 
 .center {
@@ -54,6 +54,7 @@
   }
 
   p {
+  font-family: "Comic Sans MS", Times, serif;
     font-size: 15px;
     margin: 0px;
     }
@@ -77,6 +78,7 @@ border:1px solid #021a40;
   .book-title {
     margin-top: 0;
     font-size: 2em;
+    font-family: "Comic Sans MS", Times, serif;
   }
 
   .avg-rating {
@@ -185,10 +187,12 @@ border:1px solid #021a40;
 /* Signup/Login form styles */
 
 .signup-form {
+
 @include body;
 
   h2 {
     margin-top: 0;
+    font-family: "Comic Sans MS", Times, serif;
   }
 
 }
@@ -198,6 +202,7 @@ border:1px solid #021a40;
 
   h2 {
     margin-top: 0;
+    font-family: "Comic Sans MS", Times, serif;
   }
 
 }
@@ -246,6 +251,11 @@ border:1px solid #021a40;
 
   h2 {
     margin-top: 0;
+  }
+
+  h8 {
+   color: white;
+  
   }
 
   .message-desc {
@@ -318,3 +328,74 @@ border:1px solid #021a40;
     text-align: center;
     img { width: 100% }
 }
+
+.comment-posted-by{
+
+color: black;
+    font-size: 0.9em;
+  
+}
+
+.comment-content{
+color: black;
+    font-size: 0.9em;
+  
+}
+
+.ligne {
+    background-color: lightblue;
+    width: 1000px;
+    height: 800px;
+    border: 25px solid blue;
+    padding: 25px;
+    margin: 25px;
+     text-transform: capitalize;
+    text-align: justify;
+
+
+}
+
+.topics {
+  height: 60px;
+  background-color: #13809b;
+  margin: 15px;
+  padding: 10px;
+}
+
+.topics a {
+font-family: "Comic Sans MS", Times, serif;
+  font-size: 1.4em;
+  font-weight: 800;
+  color: white;
+  text-color: white;
+}
+.pagination {
+  
+   
+    padding: 0;
+    margin: 0;
+
+
+
+
+
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+   
+
+
+    
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+
+}
+
+ link1 {
+   color: white;
+  
+  }

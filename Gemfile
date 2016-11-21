@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby "2.1.5"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -25,6 +25,8 @@ gem 'devise'
 gem 'will_paginate', '~> 3.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem "paperclip", "~> 4.3"
+gem "paperclip-dropbox", ">= 1.1.7"
+gem 'dropbox-sdk', '~> 1.6', '>= 1.6.5'
 gem 'mailboxer'
 
 

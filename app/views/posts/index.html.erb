@@ -1,11 +1,34 @@
 
 
+  
 
 <div class="center">
 
+<div id="owl-demo" class="owl-carousel owl-theme">
+     
+      <div class="item"  ><img  src="assets/mat.jpg" ></div>
+      <div class="item"><img src="assets/mat2.jpg" ></div>
+      <div class="item"><img src="assets/mat3.jpg" ></div>
+      <div class="item"><img src="assets/mat4.jpg" ></div>
+      <div class="item"><img src="assets/mat5.jpg" ></div>
+      <div class="item"><img src="assets/mat6.jpg" ></div>
+     
+    </div>
 
 </div>
+<div class="pagination">
+<% unless @posts.empty? %>
 
+<nav class"navbar-fixed-bottom">
+  <ul class="pager">
+    <li class="previous " <%= will_paginate @posts %> <span aria-hidden="true">
+    
+   
+  </ul>
+</nav>
+<% end %>
+
+</div>
 
  
     <% @posts.each do |post| %>
@@ -24,16 +47,31 @@
  
 
 <br>
-<div class="pagination">
-<% unless @posts.empty? %>
 
-<nav class"navbar-fixed-bottom">
-  <ul class="pager">
-    <li class="previous " <%= will_paginate @posts %> <span aria-hidden="true">&larr;
-   
-  </ul>
-</nav>
-<% end %>
 
-</div>
+<script>
 
+
+    $(document).ready(function() {
+     
+      $("#owl-demo").owlCarousel({
+          items:5,
+          autoPlay:true,
+    loop:true,
+    margin:10,
+    merge:true,
+    responsive:{
+        678:{
+            mergeFit:true
+        },
+        1000:{
+            mergeFit:false
+        }
+    }
+     
+      });
+     
+    });
+
+
+</script>

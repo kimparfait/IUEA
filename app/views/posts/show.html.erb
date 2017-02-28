@@ -4,6 +4,8 @@
 
 
 <div class="ligne">
+
+
 	<div class= "round-image-50"> <%=image_tag  @post.user.image(:thumb)   %></div>
 <h5>
   
@@ -36,13 +38,11 @@
 
 <h4 class="btn btn-default">(<%= @post.comments.count %>)comments</h4><br>
 
-
-
-
+                                                                                                                                                          
 		<!-- renders the _comment.html.erb partial file. -->
 	<br>	<p><%= render @post.comments.limit(7).order("created_at DESC") %></p>
 
-<h3 class="reply-to-msg">:</h3>
+<h3 class="reply-to-msg"></h3>
 		<!-- renders the comments form -->
 <%= render 'comments/form' %>
 <%= link_to 'Back', posts_path , class: "btn btn-default" %>

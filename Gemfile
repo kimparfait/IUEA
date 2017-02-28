@@ -28,6 +28,7 @@ gem "paperclip", "~> 4.3"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem 'dropbox-sdk', '~> 1.6', '>= 1.6.5'
 gem 'mailboxer'
+gem 'owlcarousel-rails'
 
 
 

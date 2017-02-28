@@ -1,15 +1,23 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
   <title>IUEA</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=2">
+
+     <meta name="viewport" content="width=device-width, initial-scale=2">
     <style>
+
 </style>
 </head>
 <body>
+ <div id="bg">
+  <img src="assets/bg1.jpg" alt="">
+</div>
+
 <%= render 'layouts/head' %>
  <div class="container">
  <% flash.each do |name, msg| %>

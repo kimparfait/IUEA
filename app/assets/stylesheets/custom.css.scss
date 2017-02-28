@@ -3,8 +3,30 @@
 @import url(http://fonts.googleapis.com/css?family=Lora|Ubuntu:300,400,500);
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+ background-blend-mode: color-red;
+}
 @mixin body {
-  background-color: #f5f5f1;
+
+background-color: #FFFFFF;
+ 
   color: #333333;
 font-family: "Comic Sans MS", Times, serif;
   border-radius: 5px;
@@ -32,6 +54,7 @@ font-family: "Comic Sans MS", Times, serif;
   color: #ff0000;
 }
 
+
 .center {
   text-align: center;
 }
@@ -57,6 +80,7 @@ font-family: "Comic Sans MS", Times, serif;
   font-family: "Comic Sans MS", Times, serif;
     font-size: 15px;
     margin: 0px;
+
     }
 }
 
@@ -262,6 +286,7 @@ border:1px solid #021a40;
     font-size: 1.1em;
     line-height: 1.75;
     margin-bottom: 50px;
+
   }
 
   .message-posted-by {
@@ -343,20 +368,40 @@ color: black;
 }
 
 .ligne {
-    background-color: lightblue;
+  
+ //background-image: url("/assets/.jpg")
+ background-color: #fff;
+
+  
     width: 1000px;
-    height: 800px;
+    height: 1000px;
     border: 25px solid blue;
     padding: 25px;
     margin: 25px;
      text-transform: capitalize;
     text-align: justify;
+    -moz-border-radius: 25px 10px / 10px 25px;
+
+border-radius: 25px 10px / 10px 25px;
+border-top-left-radius:     4em;
+border-top-right-radius:    4em;
+border-bottom-right-radius: 4em;
+border-bottom-left-radius:  4em;
+border-width : 20px;
 
 
 }
 
 .topics {
-  height: 60px;
+ height: 100px;
+width:160px;
+-moz-border-radius: 25px 10px / 10px 25px;
+border-radius: 25px 10px / 10px 25px;
+border-top-left-radius:     4em;
+border-top-right-radius:    4em;
+border-bottom-right-radius: 4em;
+border-bottom-left-radius:  4em;
+border-width : 20px;
   background-color: #13809b;
   margin: 15px;
   padding: 10px;
@@ -367,22 +412,22 @@ font-family: "Comic Sans MS", Times, serif;
   font-size: 1.4em;
   font-weight: 800;
   color: white;
-  text-color: white;
 }
 .pagination {
   
-   
-    padding: 0;
-    margin: 0;
+   background-color: blue;
+  
+    padding: 1px;
+    margin: 1px;
 
 
 
 
 
-    color: black;
-    float: left;
+    color: blue;
+    float: center;
     padding: 8px 16px;
-    text-decoration: none;
+    text-decoration: blue;
    
 
 
@@ -397,5 +442,6 @@ font-family: "Comic Sans MS", Times, serif;
 
  link1 {
    color: white;
+
   
   }

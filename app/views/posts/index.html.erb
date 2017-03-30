@@ -16,19 +16,7 @@
     </div>
 
 </div>
-<div class="pagination">
-<% unless @posts.empty? %>
 
-<nav class"navbar-fixed-bottom">
-  <ul class="pager">
-    <li class="previous " <%= will_paginate @posts %> <span aria-hidden="true">
-    
-   
-  </ul>
-</nav>
-<% end %>
-
-</div>
 
  
     <% @posts.each do |post| %>
@@ -36,17 +24,32 @@
     <div class='col-xs-3 topics text-center'>
       
     <h8 class: "link1"  style="color:white" ><%=link_to post.title,post  %> </h8><BR>
-
+     
    
     
      
     </div>
-	</div>
+
    
     <% end %>
- 
+    
+<% unless @posts.empty? %>
+<div class=" pagination">
+
+<nav class"navbar-fixed-bottom">
+  <ul class="pager">
+    <li class="previous "<%= will_paginate @posts%>
+    
+    </ul>
+</nav>
+<% end %>
+
+</div>
+
+ </div>
 
 <br>
+
 
 
 <script>
@@ -75,3 +78,4 @@
 
 
 </script>
+

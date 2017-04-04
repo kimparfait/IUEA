@@ -7,9 +7,9 @@
 
 
 	<div class= "round-image-50"> <%=image_tag  @post.user.image(:thumb)   %></div>
-<h5>
+<h5 class="current-category" style="color:blue">
   
-  <%= @post.title %>
+  Title:<%= @post.title %>
 </h5>
 
 <p class="current-category" style="color:blue" >Category: <%=@post.category.name %> </p>

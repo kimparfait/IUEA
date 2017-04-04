@@ -34,14 +34,27 @@
       </ul>
        
  </ul>
+ 
       
-      <ul class="nav navbar-nav navbar-right">
+
+ <ul class="nav navbar-nav navbar-right">
        <% if user_signed_in? %>
       <li><%= link_to 'New Post', new_post_path  %></li>
       <% else %>
        <%end%>
+
+        <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false">All Categories<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                 <% Category.all.each do |category|%>
+                <li class="<%='active' if params[:category] == category.name %>" > 
+                <%= link_to category.name, posts_path(category: category.name), class: "link" %></li>
+                 <%end%>
+              </ul>
+
       </ul>
-    
+
+            
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

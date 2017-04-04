@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 6).order("created_at DESC")
+    @posts = Post.paginate(:page => params[:page], :per_page => 1).order("created_at DESC")
   end
 
   # GET /posts/1
@@ -17,16 +17,19 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = current_user.posts.build
+    @categories = Category.all.map{|c| [c.name, c.id]}
   end
 
   # GET /posts/1/edit
   def edit
+     @categories = Category.all.map{|c| [c.name, c.id]}
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = current_user.posts.build(post_params)
+     @post.category_id = params[:category_id]
 
     respond_to do |format|
       if @post.save
@@ -42,9 +45,12 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post.category_id = params[:category_id]
+
     respond_to do |format|
+
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to post_path(@post), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -77,9 +83,9 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :document)
+      params.require(:post).permit(:title, :description, :document, :category_id)
     end
-
+   
     def check_user
        if current_user != @post.user
           redirect_to root_url, alert: "Sorry, dont permission"
